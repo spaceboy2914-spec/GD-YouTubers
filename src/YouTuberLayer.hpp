@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Geode/DefaultInclude.hpp>
+#include <Geode/ui/Popup.hpp>
 #include <Geode/modify/LevelBrowserLayer.hpp>
 #include <Geode/modify/GJSearchObject.hpp>
 #include <cocos2d.h>
