@@ -10,7 +10,7 @@ using namespace geode::prelude;
 extern std::set<std::string> YouTubers;
 extern std::set<std::string> Streamers;
 
-class YouTuberLayer : public geode::Popup<> {
+class YouTuberLayer : public Popup<> {
 
 public:
     static constexpr float POPUP_WIDTH = 310.f;
@@ -124,7 +124,7 @@ bool YouTuberLayer::setup() {
     mainLayer->addChild(rightSide);
     mainLayer->addChild(bottomMenu);
     return true;
-};
+}
 
 void YouTuberLayer::searchPlayer(CCObject* sender) {
     std::string player = static_cast<CCNode*>(sender)->getID();
