@@ -12,14 +12,14 @@ bool twitchdownload = false;
 
 std::set<std::string> YouTubers;
 std::set<std::string> Streamers;
-EventListener<web::WebTask> m_listener;
-EventListener<web::WebTask> m_listener1;
+EventListener<web::WebRequest> m_listener;
+EventListener<web::WebRequest> m_listener1;
 
 void downloadYT() {
 	
 	if (!ytdownload) {
 
-		m_listener.bind([] (web::WebTask::Event* e) {
+		m_listener.bind([] (web::WebRequest::Event* e) {
             if (web::WebResponse* res = e->getValue()) {
 				auto data = res->string().unwrapOr("eee"); // wowzers found whats printing
 				log::debug("Attempting to download YouTuber List..");
@@ -46,7 +46,7 @@ void downloadTwitch() {
 	
 	if (!twitchdownload) {
 
-		m_listener1.bind([] (web::WebTask::Event* e) {
+		m_listener1.bind([] (web::WebRequest::Event* e) {
             if (web::WebResponse* res = e->getValue()) {
 				auto data = res->string().unwrapOr("eee"); // wowzers found whats printing
 				log::debug("Attempting to download Streamer List..");
